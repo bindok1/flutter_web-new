@@ -1,9 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web/fonts.dart';
 
-class LandingPage extends StatelessWidget {
+class LandingPage extends StatefulWidget {
+  @override
+  State<LandingPage> createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage> {
+  int selectedIndex = 0; //membuat pengkondisian
+
   @override
   Widget build(BuildContext context) {
+    Widget navItem({required String Title, required int Index}) {
+      return InkWell(
+        //inkwell untuk state management
+        onTap: () {
+          setState(() {
+            selectedIndex = Index;
+          });
+        },
+
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              Title,
+              style: Index == selectedIndex ? SubTitle : SecTitle,
+            ),
+            Container(
+              width: 66,
+              height: 2,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Index == selectedIndex
+                    ? Color(0xffFE9980)
+                    : Colors.transparent,
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
         body: ListView(
       scrollDirection: Axis.horizontal,
@@ -43,26 +81,7 @@ class LandingPage extends StatelessWidget {
 
                           Row(
                             children: [
-                              Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Text(
-                                    'Guides',
-                                    style: SubTitle,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Container(
-                                          width: 66,
-                                          height: 2,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                              color: Color(0xffFE9980))),
-                                    ],
-                                  ),
-                                ],
-                              )
+                              navItem(Title: 'Guides', Index: 0),
                             ],
                           ),
                           SizedBox(
@@ -70,26 +89,7 @@ class LandingPage extends StatelessWidget {
                           ),
                           Row(
                             children: [
-                              Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Text(
-                                    'Pricing',
-                                    style: SecTitle,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Container(
-                                          width: 66,
-                                          height: 2,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                              color: Colors.transparent)),
-                                    ],
-                                  ),
-                                ],
-                              )
+                              navItem(Title: 'Pricing', Index: 1),
                             ],
                           ),
                           SizedBox(
@@ -97,26 +97,7 @@ class LandingPage extends StatelessWidget {
                           ),
                           Row(
                             children: [
-                              Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Text(
-                                    'Team',
-                                    style: SecTitle,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Container(
-                                          width: 66,
-                                          height: 2,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                              color: Colors.transparent)),
-                                    ],
-                                  ),
-                                ],
-                              )
+                              navItem(Title: 'Team', Index: 2),
                             ],
                           ),
                           SizedBox(
@@ -124,26 +105,7 @@ class LandingPage extends StatelessWidget {
                           ),
                           Row(
                             children: [
-                              Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Text(
-                                    'Stories',
-                                    style: SecTitle,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Container(
-                                          width: 66,
-                                          height: 2,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                              color: Colors.transparent)),
-                                    ],
-                                  ),
-                                ],
-                              )
+                              navItem(Title: 'Stories', Index: 3),
                             ],
                           ),
                           SizedBox(
