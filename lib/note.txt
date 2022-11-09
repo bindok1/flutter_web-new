@@ -1,0 +1,5 @@
+tambahkan font manual karena agar ribet yang online nya untuk versi web
+gunakan stack untuk menumpuk semua widget
+gunakan width : mediaquery.of(context).size.width agar content menyesuaikan layar
+guankan fit.boxit fill agar gambar menyesuaikan width dan height nya
+gunakan flutter build web untuk bisa deploy ke netlyfy
