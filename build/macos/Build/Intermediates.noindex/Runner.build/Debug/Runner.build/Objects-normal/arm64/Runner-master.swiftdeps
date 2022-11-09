@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)"
+options: "2f1d3b27e2fb5f27a5d7cb86891053fc1fc3835ab47706b82aefd6e7038252d4"
+build_start_time: [1667704499, 961236000]
+build_end_time: [1667704505, 116622924]
+inputs:
+  "/Users/niozihni/flutter_web/macos/Flutter/GeneratedPluginRegistrant.swift": [1667704472, 434707641]
+  "/Users/niozihni/flutter_web/macos/Runner/AppDelegate.swift": [1663119098, 0]
+  "/Users/niozihni/flutter_web/macos/Runner/MainFlutterWindow.swift": [1663119098, 0]
